@@ -279,14 +279,17 @@ section {
 .about-content h2 {
   font-size: 7rem;
   text-align: left;
+  color: white;
 }
 
 .about-content p {
   font-size: 1.8rem;
+  color: white;
 }
 
 .about-content .btn {
   margin: 3rem 0;
+  color: white;
 }
 
 ::-webkit-scrollbar {
@@ -305,6 +308,10 @@ section {
   text-align: center;
   font-size: 7rem;
   margin: 5rem 0;
+}
+
+.services {
+  background-color: #79797c;
 }
 
 .services-container {
