@@ -110,10 +110,10 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ----- שלושה.js ומודל תלת מימדי -----
-import * as THREE from './node_modules/three/build/three.module.js';  // ייבוא ספריית Three.js
-import { GLTFLoader } from './node_modules/three/examples/jsm/loaders/GLTFLoader.js';  // ייבוא טוען מודלים בפורמט GLTF
-import { OrbitControls } from './node_modules/three/examples/jsm/controls/OrbitControls.js';  // שליטה במצלמה בעזרת העכבר
-import { DRACOLoader } from './node_modules/three/examples/jsm/loaders/DRACOLoader.js';
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
 
 function create3DModel({
   containerId,
@@ -219,7 +219,7 @@ loader.load(modelPath, (gltf) => {
 // מודל 1 - Python
 create3DModel({
   containerId: 'model-web',
-  modelPath: './models/python/scene.gltf',
+  modelPath: './public/models/python/scene.gltf',
   scale: 0.08,
   position: [0, 3.5, 0],
   cameraSettings: {
@@ -270,7 +270,7 @@ create3DModel({
 // מודל 2 - HTML/CSS/JS
 create3DModel({
   containerId: 'model-web-2',
-  modelPath: './models/html.css.js/scene.gltf',
+  modelPath: './public/models/html.css.js/scene.gltf',
   scale: 0.7,
   position: [0, 2.3, 0],
   cameraSettings: {
@@ -315,7 +315,7 @@ create3DModel({
 // מודל 3 - Data Analysis
 create3DModel({
   containerId: 'model-web-3',
-  modelPath: './models/data_analysis/scene.gltf',
+  modelPath: './public/models/data_analysis/scene.gltf',
   scale: 80,
   position: [0, 8, 0],
   cameraSettings: {
@@ -366,7 +366,7 @@ create3DModel({
 // מודל 4 - Economy
 create3DModel({
   containerId: 'model-web-4',
-  modelPath: './models/economy/scene.gltf',
+  modelPath: './public/models/economy/scene.gltf',
   scale: 160,
   position: [0, 2.3, 0],
   cameraSettings: {
@@ -415,3 +415,6 @@ create3DModel({
 });
 
 
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
