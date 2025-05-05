@@ -219,7 +219,7 @@ loader.load(modelPath, (gltf) => {
 // מודל 1 - Python
 create3DModel({
   containerId: 'model-web',
-  modelPath: './public/models/python/scene.gltf',
+  modelPath: '/models/python/scene.gltf',
   scale: 0.08,
   position: [0, 3.5, 0],
   cameraSettings: {
@@ -270,7 +270,7 @@ create3DModel({
 // מודל 2 - HTML/CSS/JS
 create3DModel({
   containerId: 'model-web-2',
-  modelPath: './public/models/html.css.js/scene.gltf',
+  modelPath: '/models/html.css.js/scene.gltf',
   scale: 0.7,
   position: [0, 2.3, 0],
   cameraSettings: {
@@ -315,7 +315,7 @@ create3DModel({
 // מודל 3 - Data Analysis
 create3DModel({
   containerId: 'model-web-3',
-  modelPath: './public/models/data_analysis/scene.gltf',
+  modelPath: '/models/data_analysis/scene.gltf',
   scale: 80,
   position: [0, 8, 0],
   cameraSettings: {
@@ -366,7 +366,7 @@ create3DModel({
 // מודל 4 - Economy
 create3DModel({
   containerId: 'model-web-4',
-  modelPath: './public/models/economy/scene.gltf',
+  modelPath: '/models/economy/scene.gltf',
   scale: 160,
   position: [0, 2.3, 0],
   cameraSettings: {
