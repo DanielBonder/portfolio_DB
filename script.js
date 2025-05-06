@@ -1,16 +1,3 @@
-// פונקציה שמטפלת בפתיחה וסגירה של התפריט
-function toggleMenu() {
-  const menuIcon = document.querySelector('#menu-icon'); // בחירת אייקון התפריט
-  const navbar = document.querySelector('.navbar'); // בחירת סרגל הניווט
-
-  if (menuIcon && navbar) { // בדיקה שהאלמנטים קיימים לפני שמבצעים פעולות
-    menuIcon.classList.toggle('bx-x'); // שינוי אייקון ל-X
-    navbar.classList.toggle('active'); // פתיחה/סגירה של התפריט
-  }
-}
-
-// חיבור הפונקציה לאירוע לחיצה על אייקון התפריט
-document.querySelector('#menu-icon').onclick = toggleMenu;
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("form");
@@ -367,7 +354,7 @@ create3DModel({
 create3DModel({
   containerId: 'model-web-4',
   modelPath: '/models/economy/scene.gltf',
-  scale: 160,
+  scale: 100,
   position: [0, 2.3, 0],
   cameraSettings: {
     fov: 30,

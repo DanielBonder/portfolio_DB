@@ -616,4 +616,106 @@ footer {
             flex-direction: column;
   }
 }
+
+.service-box {
+  background-color: #0a0a2a;
+  border: 1px solid #0033cc;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+  border-radius: 1.5rem;
+}
+
+.service-box:hover {
+  -webkit-transform: translateY(-8px);
+          transform: translateY(-8px);
+  -webkit-box-shadow: 0 0 20px rgba(0, 102, 255, 0.5);
+          box-shadow: 0 0 20px rgba(0, 102, 255, 0.5);
+  background-color: #001133;
+}
+
+.service-box h4 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #66ccff;
+}
+
+.service-box p {
+  font-size: 1.4rem;
+  color: #d0d0d0;
+}
+
+.three-model-container {
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.three-model {
+  width: 100%;
+  height: 100%;
+}
+
+/* אפקט מעבר לחיצה ועכבר */
+.hover-transition {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.hover-transition:hover,
+.hover-transition:focus {
+  background-color: #0004d2 !important;
+  color: white !important;
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.hover-transition:hover h4,
+.hover-transition:hover p {
+  color: white !important;
+}
+
+/* כרטיסים מוארים עם אפקט סייבר-כחול */
+.glowing-card {
+  background: #0d1117;
+  border: 1px solid rgba(0, 102, 204, 0.25);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-box-shadow: 0 0 10px rgba(0, 102, 204, 0.2);
+          box-shadow: 0 0 10px rgba(0, 102, 204, 0.2);
+}
+
+.glowing-card:hover {
+  background: #001f3f;
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  -webkit-box-shadow: 0 0 25px rgba(0, 123, 255, 0.6), 0 0 40px rgba(0, 123, 255, 0.3);
+          box-shadow: 0 0 25px rgba(0, 123, 255, 0.6), 0 0 40px rgba(0, 123, 255, 0.3);
+}
+
+.glowing-card h4 {
+  color: #66ccff;
+}
+
+.glowing-card:hover h4 {
+  color: #ffffff;
+}
+
+.glowing-card p {
+  color: #b0c4de;
+}
+
+.glowing-card:hover p {
+  color: #e0e0e0;
+}
+
+.heading {
+  color: #66ccff;
+}
 /*# sourceMappingURL=style.css.map */
