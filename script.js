@@ -405,3 +405,11 @@ create3DModel({
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
+function highlightTitle() {
+  const title = document.getElementById('title');
+  title.classList.add('active');
+  setTimeout(() => {
+    title.classList.remove('active');
+  }, 1000);
+}
