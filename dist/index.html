@@ -20,24 +20,38 @@
     }
   }
   </script>
-    <script type="module" crossorigin src="/assets/index-DWw6g4KV.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-BGBTe-tI.css">
+    <script type="module" crossorigin src="/assets/index-DuRVgNOe.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CX1RZCTl.css">
   </head>
   <body>
-    <header class = "header">
-    <a href="#home" class="logo">
-      Daniel <span>Bonder</span>
-    </a>      
-    <i class="bx bx-menu" id="menu-icon"></i>
-    <nav class="navbar">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Servises</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-    </nav>
-    <button class="gardient-btn">Contact Me</button>
+    <header class="bg-dark sticky-top border-bottom">
+      <nav class="navbar navbar-expand-lg navbar-dark container">
+        <a class="navbar-brand fw-bold" href="#home">
+          Daniel <span class="text-info">Bonder</span>
+        </a>
+    
+        <!-- כפתור המבורגר מעוצב -->
+        <button class="navbar-toggler bg-light rounded-circle p-2 border-0" type="button"
+        data-bs-toggle="collapse" data-bs-target="#navbarContent"
+        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+  <i class="bx bx-menu fs-3 text-dark"></i> <!-- שלושה קווים -->
+</button>
+
+    
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
     </header>
+    
+    
+    
 
     <section class="home" id="home">
 
@@ -95,55 +109,58 @@
 </div>
 </section>
 
-<section class="services py-5" id="services">
+
+<section class="services py-5 bg-black text-white" id="services">
   <div class="container">
-    <h2 class="heading text-center mb-5">Services</h2>
+    <h2 class="heading text-center mb-5 text-primary-emphasis display-5 fw-bold">Services</h2>
     <div class="row g-4">
 
+      <!-- Card Template Start -->
       <div class="col-12 col-md-6 col-lg-3">
-        <div class="service-box p-3 shadow rounded h-100 text-center">
-          <div class="three-model-container mb-3">
+        <div class="service-box p-4 shadow-lg rounded-4 h-100 text-center glowing-card">
+          <div class="three-model-container mb-5">
             <div id="model-web" class="three-model"></div>
           </div>
           <div class="service-info">
-            <h4>Python Developer</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga nihil exercitationem voluptate, saepe recusandae sint reiciendis laborum suscipit velit veniam tempore unde fugit soluta nesciunt iure sit cum ducimus asperiores?</p>
+            <h4 class="fw-semibold text-info mb-3">Python Developer</h4>
+            <p class="text-secondary">Build robust backends, data tools, and automation scripts using modern Python frameworks.</p>
           </div>
         </div>
       </div>
+      <!-- Card Template End -->
 
       <div class="col-12 col-md-6 col-lg-3">
-        <div class="service-box p-3 shadow rounded h-100 text-center">
-          <div class="three-model-container mb-3">
+        <div class="service-box p-4 shadow-lg rounded-4 h-100 text-center glowing-card">
+          <div class="three-model-container mb-5">
             <div id="model-web-2" class="three-model"></div>
           </div>
           <div class="service-info">
-            <h4>Web Developer</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam magnam vel necessitatibus laudantium laborum id nobis dolor dignissimos quo maxime repellat, ea voluptatum accusantium? Quas soluta quae explicabo iste alias?</p>
+            <h4 class="fw-semibold text-info mb-3">Web Developer</h4>
+            <p class="text-secondary">Responsive and beautiful websites using HTML, CSS, JavaScript, and modern UI frameworks.</p>
           </div>
         </div>
       </div>
 
       <div class="col-12 col-md-6 col-lg-3">
-        <div class="service-box p-3 shadow rounded h-100 text-center">
-          <div class="three-model-container mb-3">
+        <div class="service-box p-4 shadow-lg rounded-4 h-100 text-center glowing-card">
+          <div class="three-model-container mb-5">
             <div id="model-web-3" class="three-model"></div>
           </div>
           <div class="service-info">
-            <h4>Analyze Data</h4>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi atque rerum consequatur iusto suscipit eligendi iure eveniet harum, a, libero sed quaerat minus doloribus ipsam sequi inventore soluta, nihil ipsum!</p>
+            <h4 class="fw-semibold text-info mb-3">Data Analyst</h4>
+            <p class="text-secondary">Analyze, visualize and tell stories with data using Python, SQL, Excel, and Power BI.</p>
           </div>
         </div>
       </div>
 
       <div class="col-12 col-md-6 col-lg-3">
-        <div class="service-box p-3 shadow rounded h-100 text-center">
-          <div class="three-model-container mb-3">
+        <div class="service-box p-4 shadow-lg rounded-4 h-100 text-center glowing-card">
+          <div class="three-model-container mb-5">
             <div id="model-web-4" class="three-model"></div>
           </div>
           <div class="service-info">
-            <h4>Economist</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quisquam consequatur maxime adipisci rerum dolores voluptatibus eaque, ex at hic voluptatem iste placeat recusandae libero tempora magnam? Similique, ducimus ab.</p>
+            <h4 class="fw-semibold text-info mb-3">Economist</h4>
+            <p class="text-secondary">Use economic models and statistics to uncover insights that drive better decision-making.</p>
           </div>
         </div>
       </div>
@@ -151,6 +168,11 @@
     </div>
   </div>
 </section>
+
+
+
+
+
 
 <section class="projects py-5" id="projects">
   <div class="container">
