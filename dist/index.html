@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio DB</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet">
+      
+
+
+      
+    />
+<script type="importmap">
+  {
+    "imports": {
+      "three": "./node_modules/three/build/three.module.js",
+      "three/examples/jsm/loaders/GLTFLoader": "./node_modules/three/examples/jsm/loaders/GLTFLoader.js"
+    }
+  }
+  </script>
+    <script type="module" crossorigin src="/assets/index-DuRVgNOe.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CX1RZCTl.css">
+  </head>
+  <body>
+    <header class="bg-dark sticky-top border-bottom">
+      <nav class="navbar navbar-expand-lg navbar-dark container">
+        <a class="navbar-brand fw-bold" href="#home">
+          Daniel <span class="text-info">Bonder</span>
+        </a>
+    
+        <!-- כפתור המבורגר מעוצב -->
+        <button class="navbar-toggler bg-light rounded-circle p-2 border-0" type="button"
+        data-bs-toggle="collapse" data-bs-target="#navbarContent"
+        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+  <i class="bx bx-menu fs-3 text-dark"></i> <!-- שלושה קווים -->
+</button>
+
+    
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    
+    
+    
+
+    <section class="home" id="home">
+
+      
+    <div class="home-content">
+    <h1>Hi, It's <span>Daniel</span></h1>
+    <h3> 
+      I'm a <span>Web Developer</span>
+    </h3>
+    <p>BA Student at Tel Hai, Economics and Information Systems. Data Engineer | Backend Engineer | Python Developer</p>
+  
+    <div class="social-icons">
+    <a href="https://github.com/DanielBonder">
+    <i class="bx bxl-github" ></i>
+    </a>
+    
+    
+   <a href="https://www.instagram.com/daniel_bonder/">
+    <i class="bx bxl-instagram-alt" ></i>
+    </a>
+
+    <a href="https://www.linkedin.com/in/daniel-bonder1/?profileId=ACoAAE4Z0Z0BGrUHFID2Y4JV3CJfpOb8VGz0EZE">
+      <i class="bx bxl-linkedin-square" ></i>
+      </a>
+  </div>
+
+<div class="btn-group">
+    <a href="#" class="btn">Hire</a>
+    <a href="#contact" class="btn">Contact</a>
+  </div>
+</div>
+
+    <div class="home-img" > 
+    <img src="/assets/imag-Dcu6t3L3.jpeg" alt="">
+  </div>
+</section>
+
+<section class="about" id="about">
+<div class="about-img">
+  <canvas id="bg-canvas2"></canvas>
+  <img src="/assets/imag-Dcu6t3L3.jpeg" alt="">
+</div>
+<div class="about-content">
+  <h2>About<span>Me</span></h2>
+  <p>As a third-year student pursuing a BA in Economics with a specialization in Information Systems, I've cultivated a diverse skill set merging economic theory with practical tech applications.
+    My foundational skills encompass a solid grasp of accounting, finance, statistics, micro and macroeconomics, enabling me to effectively analyze economic trends and data.
+    Additionally, I've delved into software development, gaining proficiency in HTML, CSS, JavaScript, React, Three.js, and Node.js for both front-end and back-end web development, alongside API development. I excel in Python programming, focusing on OOP principles, recursion algorithms, data structures, and time complexity analysis, facilitating the creation of dynamic web apps and addressing complex computational challenges.
+    I also possess hands-on experience with commercial database management systems like SQL Server, Oracle, and MySQL, honing my ability to design, implement, and optimize databases for efficient data management.
+    Complementing my technical skills, I have a keen interest in data analysis, leveraging my analytical prowess to extract valuable insights for informed decision-making.
+    Overall, my multidisciplinary background equips me with the versatility and expertise to thrive in a dynamic professional landscape, integrating economics, information systems, software development, and data analytics.</p>
+  <a href="#" class="btn">Read More</a>
+</div>
+</section>
+
+
+<section class="services py-5 bg-black text-white" id="services">
+  <div class="container">
+    <h2 class="heading text-center mb-5 text-primary-emphasis display-5 fw-bold">Services</h2>
+    <div class="row g-4">
+
+      <!-- Card Template Start -->
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="service-box p-4 shadow-lg rounded-4 h-100 text-center glowing-card">
+          <div class="three-model-container mb-5">
+            <div id="model-web" class="three-model"></div>
+          </div>
+          <div class="service-info">
+            <h4 class="fw-semibold text-info mb-3">Python Developer</h4>
+            <p class="text-secondary">Build robust backends, data tools, and automation scripts using modern Python frameworks.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Card Template End -->
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="service-box p-4 shadow-lg rounded-4 h-100 text-center glowing-card">
+          <div class="three-model-container mb-5">
+            <div id="model-web-2" class="three-model"></div>
+          </div>
+          <div class="service-info">
+            <h4 class="fw-semibold text-info mb-3">Web Developer</h4>
+            <p class="text-secondary">Responsive and beautiful websites using HTML, CSS, JavaScript, and modern UI frameworks.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="service-box p-4 shadow-lg rounded-4 h-100 text-center glowing-card">
+          <div class="three-model-container mb-5">
+            <div id="model-web-3" class="three-model"></div>
+          </div>
+          <div class="service-info">
+            <h4 class="fw-semibold text-info mb-3">Data Analyst</h4>
+            <p class="text-secondary">Analyze, visualize and tell stories with data using Python, SQL, Excel, and Power BI.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="service-box p-4 shadow-lg rounded-4 h-100 text-center glowing-card">
+          <div class="three-model-container mb-5">
+            <div id="model-web-4" class="three-model"></div>
+          </div>
+          <div class="service-info">
+            <h4 class="fw-semibold text-info mb-3">Economist</h4>
+            <p class="text-secondary">Use economic models and statistics to uncover insights that drive better decision-making.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<section class="projects py-5" id="projects">
+  <div class="container">
+    <h2 class="heading text-center mb-5">Projects</h2>
+    <div class="row g-4">
+
+      <!-- Project Card Template (x6) -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="project-card bg-dark text-light shadow rounded h-100 d-flex flex-column p-3">
+          
+          <!-- תמונה בגובה אחיד -->
+          <div class="ratio ratio-16x9 mb-3 rounded overflow-hidden">
+            <img src="/assets/karin-9nDbK6Ze.jpeg" alt="Project on diet" class="img-fluid object-fit-cover w-100 h-100">
+          </div>
+
+          <!-- תוכן הפרויקט -->
+          <h3 class="fs-5">Project on diet</h3>
+          <p class="flex-grow-1">
+            Full source code of a full-stack Nutrition Management System for dietitians, featuring modules for meal planning, appointment booking, and payment tracking.
+          </p>
+
+          <!-- כפתור -->
+          <a class="btn btn-primary w-100 mt-auto" href="https://github.com/DanielBonder/diet" target="_blank">Review Project</a>
+        </div>
+      </div>
+
+      <!-- Project 2 – שנה רק את התוכן והתמונה -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="project-card bg-dark text-light shadow rounded h-100 d-flex flex-column p-3">
+          <div class="ratio ratio-16x9 mb-3 rounded overflow-hidden">
+            <img src="/assets/finland-LhxU4lGj.jpeg" alt="Finland Project" class="img-fluid object-fit-cover w-100 h-100">
+          </div>
+          <h3 class="fs-5">Data Analytics Project</h3>
+          <p class="flex-grow-1">
+            An academic BI/data analytics project based on public data from Finland.
+          </p>
+          <a class="btn btn-primary w-100 mt-auto" href="https://github.com/DanielBonder/finland-bi-dashboard" target="_blank">Review Project</a>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="project-card bg-dark text-light shadow rounded h-100 d-flex flex-column p-3">
+          
+          <!-- תמונה בגובה אחיד -->
+          <div class="ratio ratio-16x9 mb-3 rounded overflow-hidden">
+            <img src="/assets/project3-D3lshY5n.png" alt="Project" class="img-fluid object-fit-cover w-100 h-100">
+          </div>
+
+          <!-- תוכן הפרויקט -->
+          <h3 class="fs-5">Project</h3>
+          <p class="flex-grow-1"> ...</p>
+
+          <!-- כפתור -->
+          <a class="btn btn-primary w-100 mt-auto"   target="_blank">Review Project</a>
+        </div>
+      </div>
+
+
+
+      
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="project-card bg-dark text-light shadow rounded h-100 d-flex flex-column p-3">
+          
+          <!-- תמונה בגובה אחיד -->
+          <div class="ratio ratio-16x9 mb-3 rounded overflow-hidden">
+            <img src="/assets/project4-BXP5aIge.png" alt="Project" class="img-fluid object-fit-cover w-100 h-100">
+          </div>
+
+          <!-- תוכן הפרויקט -->
+          <h3 class="fs-5">Project</h3>
+          <p class="flex-grow-1"> ...</p>
+
+          <!-- כפתור -->
+          <a class="btn btn-primary w-100 mt-auto" target="_blank">Review Project</a>
+        </div>
+      </div>
+
+
+
+        
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="project-card bg-dark text-light shadow rounded h-100 d-flex flex-column p-3">
+          
+          <!-- תמונה בגובה אחיד -->
+          <div class="ratio ratio-16x9 mb-3 rounded overflow-hidden">
+            <img src="/assets/project5-CRinWLz2.png" alt="Project" class="img-fluid object-fit-cover w-100 h-100">
+          </div>
+
+          <!-- תוכן הפרויקט -->
+          <h3 class="fs-5">Project</h3>
+          <p class="flex-grow-1"> ...</p>
+
+          <!-- כפתור -->
+          <a class="btn btn-primary w-100 mt-auto" target="_blank">Review Project</a>
+        </div>
+      </div>
+
+
+
+      
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="project-card bg-dark text-light shadow rounded h-100 d-flex flex-column p-3">
+          
+          <!-- תמונה בגובה אחיד -->
+          <div class="ratio ratio-16x9 mb-3 rounded overflow-hidden">
+            <img src="/assets/project6-DKdloH-8.png" alt="Project" class="img-fluid object-fit-cover w-100 h-100">
+          </div>
+
+          <!-- תוכן הפרויקט -->
+          <h3 class="fs-5">Project</h3>
+          <p class="flex-grow-1"> ...</p>
+
+          <!-- כפתור -->
+          <a class="btn btn-primary w-100 mt-auto"  target="_blank">Review Project</a>
+        </div>
+      </div>
+
+      <!-- הוסף קלפים נוספים כאן באותו מבנה בדיוק -->
+
+    </div>
+  </div>
+</section>
+
+
+
+<section class="contact" id="contact">
+  <h2 class="heading">Contact <span>Me</span></h2>
+
+  <form action="contact.php" method="POST">
+    <div class="input-group">
+        <div class="input-box">
+            <input type="text" name="full_name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+        </div>
+        <div class="input-box">
+            <input type="number" name="phone_number" placeholder="Phone Number" required>
+            <input type="text" name="subject" placeholder="Subject" required>
+        </div>
+    </div>
+    <div class="input-group2">
+        <textarea name="message" placeholder="Your Message" cols="30" rows="10" required></textarea>
+        <input type="submit" value="Send Message" class="btn">
+    </div>
+</form>
+
+</section>
+<footer class="footer">
+  <div class="social-icons">
+
+    <a href="https://github.com/DanielBonder">
+      <i class="bx bxl-github" ></i>
+      </a>
+
+      <a href="https://www.instagram.com/daniel_bonder/">
+        <i class="bx bxl-instagram-alt" ></i>
+        </a>
+    
+        <a href="https://www.linkedin.com/in/daniel-bonder1/?profileId=ACoAAE4Z0Z0BGrUHFID2Y4JV3CJfpOb8VGz0EZE">
+          <i class="bx bxl-linkedin-square" ></i>
+          </a>
+
+
+  </div>
+  <ul class="list">
+    <li>
+      <a href="#">FAQ</a>
+    </li>
+
+    <li>
+      <a href="#services">Services</a>
+    </li>
+
+    <li>
+      <a href="#about">About</a>
+    </li>
+    <li>
+      <a href="#projects">Projects</a>
+    </li>
+    <li>
+      <a href="#contact">Contact</a>
+    </li>
+  </ul>
+  <p class="copyright">© Daniel Bonder | Rights Reserved</p>
+</footer>
+
+
+
+</body>
+</html>
+
