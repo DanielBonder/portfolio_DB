@@ -402,6 +402,60 @@ create3DModel({
 });
 
 
+create3DModel({
+  containerId: 'model-web-5',
+  modelPath: '/models/daniel/base_basic_shaded.gltf',
+  scale: 1500 ,  // מספיק גדול אבל לא מוגזם
+position: [100, -1300    , 50] ,   // הורדה עמוקה יותר של כל המודל
+  
+  cameraSettings: {
+    fov: 45,
+    near: 10,
+    far: 10000,
+    position: [1000, 4000 , 900]  // יותר גובה ויותר מרחק
+  }
+  
+  ,
+  lightSettings: [
+    {
+      type: 'ambient',
+      color: 0xffffff,
+      intensity: 3
+    },
+    {
+      type: 'directional',
+      color: 0xffffff,
+      intensity: 1.5,
+      position:  [30, 50, 30]
+    },
+    {
+      type: 'directional',
+      color: 0xffffff,
+      intensity: 1.2,
+      position: [-30, 50, -30]
+    },
+    {
+      type: 'directional',
+      color: 0xffffff,
+      intensity: 1,
+      position: [30, -50, 30]
+    },
+    {
+      type: 'directional',
+      color: 0xffffff,
+      intensity: 0.8,
+      position: [-30, -50, -30]
+    },
+    {
+      type: 'hemisphere',
+      skyColor: 0xffffff,
+      groundColor: 0x404040,
+      intensity: 50
+    }
+  ]
+});
+
+
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
