@@ -481,3 +481,17 @@ background-color: #79797c;
   color: #00eeff !important;
   border-bottom: 2px solid #00eeff;
 }
+
+
+&.active {
+  .underline {
+    background: linear-gradient(90deg, #00eeff, #4f00ff);
+    transform: scaleY(1.6);
+    box-shadow: 0 0 10px #00eeff, 0 0 20px #4f00ff;
+    transform-origin: center;
+    transition: all 0.4s ease;
+  }
+}
+
+@import 'header';
+    

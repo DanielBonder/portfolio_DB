@@ -1,0 +1,112 @@
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: linear-gradient(90deg, #0d1117, #1f1f2e);
+    border-bottom: 1px solid rgba(0, 238, 255, 0.1);
+    padding: 1rem 2rem;
+  
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+  
+      .gradient-text {
+        background: linear-gradient(90deg, #00eeff, #0004d2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  
+    .hamburger {
+      font-size: 1.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      padding: 0.5rem 0.7rem;
+      cursor: pointer;
+      display: none;
+    }
+  
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+  
+      li {
+        list-style: none;
+      }
+  
+      &.open {
+        max-height: 300px;
+      }
+    }
+  
+    .custom-nav-link {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      text-transform: uppercase;
+      overflow: hidden;
+  
+      .link-text {
+        position: relative;
+        z-index: 1;
+      }
+  
+      .underline {
+        display: block;
+        width: 0%;
+        height: 2px;
+        background: linear-gradient(90deg, #00eeff, #0004d2);
+        border-radius: 10px;
+        margin-top: 5px;
+      }
+    }
+  
+    // רספונסיביות
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+  
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #1f1f2e;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+  
+        li {
+          margin: 1rem 0;
+        }
+      }
+    }
+  }
+
+  &.active {
+    .underline {
+      background: linear-gradient(90deg, #00eeff, #4f00ff);
+      transform: scaleY(1.6);
+      box-shadow: 0 0 10px #00eeff, 0 0 20px #4f00ff;
+      transform-origin: center;
+      transition: all 0.4s ease;
+    }
+  }
+  

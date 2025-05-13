@@ -21,45 +21,32 @@
       
   </head>
   <body>
-    <header class="sticky-top">
-      <nav class="navbar navbar-expand-lg px-4 py-3 shadow-lg" style="background: linear-gradient(90deg, #0d1117, #1f1f2e); border-bottom: 1px solid rgba(0, 238, 255, 0.1);">
+    <header class="site-header">
+      <nav class="nav-container">
         
         <!-- לוגו -->
-        <a class="navbar-brand fw-bold fs-3 text-white" href="#home">
-          Daniel <span style="background: linear-gradient(90deg, #00eeff, #0004d2); -webkit-background-clip: text; color: transparent;">Bonder</span>
+        <a href="#home" class="logo" id="logo">
+          Daniel <span class="gradient-text">Bonder</span>
         </a>
     
         <!-- כפתור המבורגר -->
-        <button class="navbar-toggler border-0 p-2" type="button"
-          data-bs-toggle="collapse" data-bs-target="#navbarContent"
-          aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"
-          style="outline: none; box-shadow: none; background-color: rgba(255,255,255,0.1); border-radius: 50%;">
-          <span class="navbar-toggler-icon"></span>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+          ☰
         </button>
     
         <!-- תפריט -->
-        <div class="collapse navbar-collapse" id="navbarContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-uppercase gap-3">
-            <li class="nav-item">
-              <a class="nav-link text-white fw-semibold position-relative active" href="#home">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white fw-semibold position-relative" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white fw-semibold position-relative" href="#services">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white fw-semibold position-relative" href="#projects">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white fw-semibold position-relative" href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
+        <ul class="nav-links" id="navLinks">
+          <li><a class="custom-nav-link" href="#home"><span class="link-text">Home</span><span class="underline"></span></a></li>
+          <li><a class="custom-nav-link" href="#about"><span class="link-text">About</span><span class="underline"></span></a></li>
+          <li><a class="custom-nav-link" href="#services"><span class="link-text">Services</span><span class="underline"></span></a></li>
+          <li><a class="custom-nav-link" href="#projects"><span class="link-text">Projects</span><span class="underline"></span></a></li>
+          <li><a class="custom-nav-link" href="#contact"><span class="link-text">Contact</span><span class="underline"></span></a></li>
+        </ul>
     
       </nav>
     </header>
+    
+    
     
     <section class="home" id="home">
       <div class="container py-5">
@@ -373,6 +360,7 @@
 
 <script type="module" src="script.js"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
 </body>
 </html>

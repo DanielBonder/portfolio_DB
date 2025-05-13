@@ -467,11 +467,87 @@ function highlightTitle() {
     title.classList.remove('active');
   }, 1000);
 }
-
-const navLinks = document.querySelectorAll('.nav-link');
-navLinks.forEach(link => {
-  link.addEventListener('click', function () {
-    navLinks.forEach(l => l.classList.remove('active'));
-    this.classList.add('active');
+// אפקט פתיחה
+window.addEventListener('DOMContentLoaded', () => {
+  gsap.from("#logo", {
+    duration: 1,
+    opacity: 0,
+    y: -20,
+    ease: "power3.out"
   });
+
+  gsap.from(".custom-nav-link", {
+    duration: 1,
+    opacity: 0,
+    y: -10,
+    delay: 0.3,
+    stagger: 0.1,
+    ease: "power2.out"
+  });
+
+  // קריאה לאפקט hover + active
+  initNavLinkEffects();
+});
+
+// אפקט hover + ניהול active
+function initNavLinkEffects() {
+  const navLinks = document.querySelectorAll(".custom-nav-link");
+
+  navLinks.forEach(link => {
+    const underline = link.querySelector(".underline");
+
+    // אפקט hover
+    link.addEventListener("mouseenter", () => {
+      if (!link.classList.contains("active")) {
+        gsap.to(underline, {
+          width: "100%",
+          duration: 0.4,
+          ease: "power2.out"
+        });
+      }
+    });
+
+    link.addEventListener("mouseleave", () => {
+      if (!link.classList.contains("active")) {
+        gsap.to(underline, {
+          width: "0%",
+          duration: 0.3,
+          ease: "power2.in"
+        });
+      }
+    });
+
+    // אפקט לחיצה: נקה את כל ה־active והאפקטים, והדגש את הנוכחי
+    link.addEventListener("click", () => {
+      navLinks.forEach(otherLink => {
+        otherLink.classList.remove("active");
+        const otherUnderline = otherLink.querySelector(".underline");
+        gsap.to(otherUnderline, {
+          width: "0%",
+          scaleY: 1,
+          boxShadow: "none",
+          duration: 0.2,
+          ease: "power2.inOut"
+        });
+      });
+
+      link.classList.add("active");
+      gsap.to(underline, {
+        width: "100%",
+        scaleY: 1.6,
+        boxShadow: "0px 0px 10px #00eeff, 0px 0px 20px #4f00ff",
+        transformOrigin: "center",
+        duration: 0.5,
+        ease: "power3.out"
+      });
+    });
+  });
+}
+
+// כפתור המבורגר
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("navLinks");
+
+hamburger?.addEventListener("click", () => {
+  navMenu.classList.toggle("open");
 });
