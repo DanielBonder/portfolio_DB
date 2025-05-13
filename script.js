@@ -469,6 +469,9 @@ function highlightTitle() {
 }
 // אפקט פתיחה
 window.addEventListener('DOMContentLoaded', () => {
+  const navLinks = document.querySelectorAll(".custom-nav-link");
+
+  // לוגו
   gsap.from("#logo", {
     duration: 1,
     opacity: 0,
@@ -476,29 +479,40 @@ window.addEventListener('DOMContentLoaded', () => {
     ease: "power3.out"
   });
 
-  gsap.from(".custom-nav-link", {
+  // קישורי ניווט
+  gsap.to(navLinks, {
     duration: 1,
-    opacity: 0,
-    y: -10,
+    opacity: 1,
+    y: 0,
     delay: 0.3,
     stagger: 0.1,
-    ease: "power2.out"
+    ease: "power2.out",
+    onStart: () => {
+      navLinks.forEach(link => link.classList.add("animated"));
+    }
   });
 
-  // קריאה לאפקט hover + active
   initNavLinkEffects();
 });
 
-// אפקט hover + ניהול active
+// אפקט hover + ניהול active עם תלת־ממד
 function initNavLinkEffects() {
   const navLinks = document.querySelectorAll(".custom-nav-link");
 
   navLinks.forEach(link => {
     const underline = link.querySelector(".underline");
 
-    // אפקט hover
+    // אפקט hover (רק אם לא active)
     link.addEventListener("mouseenter", () => {
       if (!link.classList.contains("active")) {
+        navLinks.forEach(otherLink => {
+          if (otherLink !== link && !otherLink.classList.contains("active")) {
+            const otherUnderline = otherLink.querySelector(".underline");
+            gsap.killTweensOf(otherUnderline);
+            gsap.set(otherUnderline, { width: "0%" });
+          }
+        });
+
         gsap.to(underline, {
           width: "100%",
           duration: 0.4,
@@ -517,11 +531,13 @@ function initNavLinkEffects() {
       }
     });
 
-    // אפקט לחיצה: נקה את כל ה־active והאפקטים, והדגש את הנוכחי
+    // לחיצה = אפקט תלת־ממד, צביעה, קו מוסתר
     link.addEventListener("click", () => {
       navLinks.forEach(otherLink => {
         otherLink.classList.remove("active");
+
         const otherUnderline = otherLink.querySelector(".underline");
+        gsap.killTweensOf(otherUnderline);
         gsap.to(otherUnderline, {
           width: "0%",
           scaleY: 1,
@@ -529,17 +545,24 @@ function initNavLinkEffects() {
           duration: 0.2,
           ease: "power2.inOut"
         });
+
+        gsap.to(otherLink, {
+          scale: 1,
+          duration: 0.2
+        });
       });
 
       link.classList.add("active");
-      gsap.to(underline, {
-        width: "100%",
-        scaleY: 1.6,
-        boxShadow: "0px 0px 10px #00eeff, 0px 0px 20px #4f00ff",
-        transformOrigin: "center",
-        duration: 0.5,
-        ease: "power3.out"
-      });
+
+      // קפיצה תלת-ממדית
+      gsap.fromTo(link,
+        { scale: 1 },
+        { scale: 1.05, duration: 0.4, ease: "back.out(2)" }
+      );
+
+      // הסתרת קו מכל מצב קודם
+      gsap.killTweensOf(underline);
+      gsap.set(underline, { width: "0%", scaleY: 0, boxShadow: "none" });
     });
   });
 }
@@ -550,4 +573,13 @@ const navMenu = document.getElementById("navLinks");
 
 hamburger?.addEventListener("click", () => {
   navMenu.classList.toggle("open");
+});
+
+// סגירת תפריט בלחיצה על אחד הקישורים (במובייל)
+document.querySelectorAll('.custom-nav-link').forEach(link => {
+  link.addEventListener("click", () => {
+    if (window.innerWidth <= 768 && navMenu?.classList.contains("open")) {
+      navMenu.classList.remove("open");
+    }
+  });
 });

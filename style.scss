@@ -464,34 +464,62 @@ background-color: #79797c;
   color: #66ccff;
 }
 
+
 #projectTitle {
   transition: color 0.6s ease, background-color 0.6s ease;
   padding: 0.5rem;
   border-radius: 0.5rem;
+
+  &.active {
+    color: white;
+    background-color: seagreen;
+  }
 }
 
-/* שינוי צבע בלחיצה */
-#projectTitle.active {
+.nav-link {
+  &.active {
+    color: #00eeff !important;
+    border-bottom: 2px solid #00eeff;
+  }
+}
+
+.custom-nav-link {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
   color: white;
-  background-color: seagreen;
-}
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  overflow: hidden;
+  cursor: pointer;
 
+  .link-text {
+    position: relative;
+    z-index: 1;
+  }
 
-.nav-link.active {
-  color: #00eeff !important;
-  border-bottom: 2px solid #00eeff;
-}
-
-
-&.active {
   .underline {
-    background: linear-gradient(90deg, #00eeff, #4f00ff);
-    transform: scaleY(1.6);
-    box-shadow: 0 0 10px #00eeff, 0 0 20px #4f00ff;
-    transform-origin: center;
-    transition: all 0.4s ease;
+    display: block;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, #00eeff, #0004d2);
+    border-radius: 10px;
+    margin-top: 5px;
+    transition: all 0.3s ease;
+  }
+
+  &.active {
+    .underline {
+      width: 100%;
+      background: linear-gradient(90deg, #00eeff, #4f00ff);
+      transform: scaleY(1.6);
+      box-shadow: 0 0 10px #00eeff, 0 0 20px #4f00ff;
+      transform-origin: center;
+      transition: all 0.4s ease;
+    }
   }
 }
 
 @import 'header';
-    
+      
