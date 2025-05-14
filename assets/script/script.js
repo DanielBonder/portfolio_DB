@@ -583,3 +583,100 @@ document.querySelectorAll('.custom-nav-link').forEach(link => {
     }
   });
 });
+
+import * as THREE from 'three';
+
+function initBackgroundParticles() {
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(
+    75,
+    window.innerWidth / window.innerHeight,
+    1,
+    1000
+  );
+  camera.position.z = 400;
+
+  const renderer = new THREE.WebGLRenderer({ alpha: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.domElement.style.position = 'absolute';
+  renderer.domElement.style.top = '0';
+  renderer.domElement.style.left = '0';
+  renderer.domElement.style.zIndex = '0';
+  document.getElementById('background-canvas')?.appendChild(renderer.domElement);
+
+  const geometry = new THREE.BufferGeometry();
+  const vertices = [];
+  const colors = [];
+
+  const color = new THREE.Color();
+
+  for (let i = 0; i < 10000; i++) {
+    const x = THREE.MathUtils.randFloatSpread(2000);
+    const y = THREE.MathUtils.randFloatSpread(2000);
+    const z = THREE.MathUtils.randFloatSpread(2000);
+    vertices.push(x, y, z);
+
+    // Assign a random pastel color to each particle
+    color.setHSL(Math.random(), 0.7, 0.7);
+    colors.push(color.r, color.g, color.b);
+  }
+
+  geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+  geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+
+  const sprite = new THREE.TextureLoader().load('/textures/star.png'); // Ensure this path is correct
+
+  const material = new THREE.PointsMaterial({
+    size: 4,
+    map: sprite,
+    vertexColors: true,
+    transparent: true,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+  });
+
+  const particles = new THREE.Points(geometry, material);
+  scene.add(particles);
+
+  let mouseX = 0,
+    mouseY = 0;
+  let targetX = 0,
+    targetY = 0;
+
+  document.addEventListener('mousemove', (event) => {
+    mouseX = event.clientX - window.innerWidth / 2;
+    mouseY = event.clientY - window.innerHeight / 2;
+  });
+
+  function animate() {
+    requestAnimationFrame(animate);
+
+    targetX = mouseX * 0.001;
+    targetY = mouseY * 0.001;
+
+    particles.rotation.y += 0.002 * (targetX - particles.rotation.y);
+    particles.rotation.x += 0.002 * (targetY - particles.rotation.x);
+
+    renderer.render(scene, camera);
+  }
+
+  animate();
+
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  initBackgroundParticles();
+});
+
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY || window.pageYOffset;
+  const canvas = document.querySelector('#background-canvas');
+  if (canvas) {
+    canvas.style.transform = `translateY(${scrollY * 0.3}px)`;
+  }
+});
