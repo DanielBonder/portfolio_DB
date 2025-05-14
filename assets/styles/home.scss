@@ -72,6 +72,9 @@ $bg-gradient: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       gap: 1.5rem;
       justify-content: flex-start;
       margin-top: 1.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInIcons 0.8s ease-out 1s forwards;
 
       @media (max-width: 768px) {
         justify-content: center;
@@ -104,6 +107,9 @@ $bg-gradient: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       gap: 1rem;
       margin-top: 1rem;
       flex-wrap: wrap;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInBtn 1.2s ease-out 1.2s forwards;
 
       @media (max-width: 768px) {
         justify-content: center;
@@ -174,7 +180,28 @@ $bg-gradient: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   }
 }
 
-// אנימציה
+@keyframes fadeInBtn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInIcons {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes fadeInUp {
   from {
     transform: translateY(20px);

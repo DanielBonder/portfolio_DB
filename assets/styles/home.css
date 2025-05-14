@@ -104,6 +104,11 @@
       -ms-flex-pack: start;
           justify-content: flex-start;
   margin-top: 1.5rem;
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+  -webkit-animation: fadeInIcons 0.8s ease-out 1s forwards;
+          animation: fadeInIcons 0.8s ease-out 1s forwards;
 }
 
 @media (max-width: 768px) {
@@ -152,6 +157,11 @@
   margin-top: 1rem;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+  -webkit-animation: fadeInBtn 1.2s ease-out 1.2s forwards;
+          animation: fadeInBtn 1.2s ease-out 1.2s forwards;
 }
 
 @media (max-width: 768px) {
@@ -241,6 +251,58 @@
 .home .home-model .three-model canvas:hover {
   -webkit-transform: scale(1.03);
           transform: scale(1.03);
+}
+
+@-webkit-keyframes fadeInBtn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes fadeInBtn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes fadeInIcons {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes fadeInIcons {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
 }
 
 @-webkit-keyframes fadeInUp {
