@@ -583,100 +583,151 @@ document.querySelectorAll('.custom-nav-link').forEach(link => {
     }
   });
 });
+let scene, camera, renderer, particles, stars;
+let active = false;
+let hue = 0;
 
-import * as THREE from 'three';
+const canvasContainer = document.getElementById('background-canvas');
 
-function initBackgroundParticles() {
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(
-    75,
-    window.innerWidth / window.innerHeight,
-    1,
-    1000
-  );
-  camera.position.z = 400;
+function initThreeScene() {
+  scene = new THREE.Scene();
+  scene.fog = new THREE.FogExp2('#0a0a23', 0.0008); // רקע כהה עם ערפל אלגנטי
 
-  const renderer = new THREE.WebGLRenderer({ alpha: true });
+  camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 3000);
+  camera.position.z = 600;
+
+  renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
   renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.domElement.style.position = 'absolute';
+  renderer.setClearColor(scene.fog.color, 0);
+
+  renderer.domElement.style.position = 'fixed';
   renderer.domElement.style.top = '0';
   renderer.domElement.style.left = '0';
+  renderer.domElement.style.width = '100%';
+  renderer.domElement.style.height = '100%';
   renderer.domElement.style.zIndex = '0';
-  document.getElementById('background-canvas')?.appendChild(renderer.domElement);
+  renderer.domElement.style.pointerEvents = 'none';
 
+  canvasContainer.innerHTML = '';
+  canvasContainer.appendChild(renderer.domElement);
+
+  // חלקיקים רכים כמו "אבק"
   const geometry = new THREE.BufferGeometry();
   const vertices = [];
   const colors = [];
-
   const color = new THREE.Color();
 
-  for (let i = 0; i < 10000; i++) {
-    const x = THREE.MathUtils.randFloatSpread(2000);
-    const y = THREE.MathUtils.randFloatSpread(2000);
-    const z = THREE.MathUtils.randFloatSpread(2000);
+  for (let i = 0; i < 2000; i++) {
+    const x = THREE.MathUtils.randFloatSpread(3000);
+    const y = THREE.MathUtils.randFloatSpread(3000);
+    const z = THREE.MathUtils.randFloatSpread(3000);
     vertices.push(x, y, z);
-
-    // Assign a random pastel color to each particle
-    color.setHSL(Math.random(), 0.7, 0.7);
+    color.setHSL(0.65 + Math.random() * 0.1, 0.6, 0.5);
     colors.push(color.r, color.g, color.b);
   }
 
   geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
   geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
 
-  const sprite = new THREE.TextureLoader().load('/textures/star.png'); // Ensure this path is correct
-
   const material = new THREE.PointsMaterial({
     size: 4,
-    map: sprite,
+    sizeAttenuation: true,
     vertexColors: true,
     transparent: true,
+    opacity: 0.6,
     blending: THREE.AdditiveBlending,
     depthWrite: false,
   });
 
-  const particles = new THREE.Points(geometry, material);
+  particles = new THREE.Points(geometry, material);
   scene.add(particles);
 
-  let mouseX = 0,
-    mouseY = 0;
-  let targetX = 0,
-    targetY = 0;
-
-  document.addEventListener('mousemove', (event) => {
-    mouseX = event.clientX - window.innerWidth / 2;
-    mouseY = event.clientY - window.innerHeight / 2;
+  // כוכבים עמומים
+  const starsGeometry = new THREE.BufferGeometry();
+  const starVertices = [];
+  for (let i = 0; i < 500; i++) {
+    starVertices.push(
+      THREE.MathUtils.randFloatSpread(3000),
+      THREE.MathUtils.randFloatSpread(3000),
+      THREE.MathUtils.randFloatSpread(3000)
+    );
+  }
+  starsGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starVertices, 3));
+  const starsMaterial = new THREE.PointsMaterial({
+    size: 1.5,
+    color: 0xffffff,
+    transparent: true,
+    opacity: 0.3,
+    depthWrite: false,
+    blending: THREE.AdditiveBlending,
   });
+  stars = new THREE.Points(starsGeometry, starsMaterial);
+  scene.add(stars);
+}
 
-  function animate() {
-    requestAnimationFrame(animate);
+let mouseX = 0, mouseY = 0, targetX = 0, targetY = 0;
 
-    targetX = mouseX * 0.001;
-    targetY = mouseY * 0.001;
+document.addEventListener('mousemove', (e) => {
+  mouseX = (e.clientX - window.innerWidth / 2);
+  mouseY = (e.clientY - window.innerHeight / 2);
+});
 
-    particles.rotation.y += 0.002 * (targetX - particles.rotation.y);
-    particles.rotation.x += 0.002 * (targetY - particles.rotation.x);
+function animate() {
+  if (!active || !renderer) return;
+  requestAnimationFrame(animate);
 
-    renderer.render(scene, camera);
+  // שינוי גוון כל הזמן (מאוד עדין)
+  hue += 0.0003;
+  const h = hue % 1;
+  if (particles && particles.material) {
+    particles.material.color.setHSL(h, 0.6, 0.55);
   }
 
-  animate();
+  // תנועה עדינה לפי עכבר
+  targetX += (mouseX * 0.001 - targetX) * 0.05;
+  targetY += (mouseY * 0.001 - targetY) * 0.05;
 
-  window.addEventListener('resize', () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-  });
+  scene.rotation.y += 0.002 * (targetX - scene.rotation.y);
+  scene.rotation.x += 0.002 * (targetY - scene.rotation.x);
+
+  renderer.render(scene, camera);
+}
+
+function enableBackground() {
+  if (!active) {
+    active = true;
+    initThreeScene();
+    animate();
+  }
+}
+
+function disableBackground() {
+  if (active) {
+    active = false;
+    canvasContainer.innerHTML = '';
+  }
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-  initBackgroundParticles();
+  const homeSection = document.getElementById('home');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        enableBackground();
+      } else {
+        disableBackground();
+      }
+    });
+  }, { threshold: 0.4 });
+
+  if (homeSection) observer.observe(homeSection);
 });
 
-window.addEventListener('scroll', () => {
-  const scrollY = window.scrollY || window.pageYOffset;
-  const canvas = document.querySelector('#background-canvas');
-  if (canvas) {
-    canvas.style.transform = `translateY(${scrollY * 0.3}px)`;
+window.addEventListener('resize', () => {
+  if (camera && renderer) {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
   }
 });

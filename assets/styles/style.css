@@ -1037,8 +1037,8 @@ footer {
   }
 }
 
-.background-canvas {
-  position: absolute;
+#background-canvas {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
@@ -1047,14 +1047,9 @@ footer {
   pointer-events: none;
 }
 
-.background-canvas canvas {
+#background-canvas canvas {
   width: 100%;
   height: 100%;
   display: block;
-}
-
-.home {
-  position: relative;
-  z-index: 1;
 }
 /*# sourceMappingURL=style.css.map */
