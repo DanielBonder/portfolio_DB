@@ -4,8 +4,8 @@ Welcome to my personal developer portfolio – a fully responsive and animated w
 
 This site was designed to showcase my **skills, creativity, and frontend development abilities** through a clean, modern, and interactive user experience.
 
-🔗 [Live Demo](https://your-live-site-url.com)  
-📁 [Project Repository](https://github.com/DanielBonder/your-portfolio-repo)
+🔗 [Live Demo](https://danielbonder.netlify.app/)  
+📁 [Project Repository](https://github.com/DanielBonder/portfolio_DB)
 
 ---
 
