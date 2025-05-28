@@ -1,38 +1,48 @@
 # 🌐 Personal Portfolio – Daniel Bonder
 
-This is my personal developer portfolio, built using modern web technologies including HTML, CSS, JavaScript, and Three.js.
+Welcome to my personal developer portfolio – a fully responsive and animated website built using **HTML**, **SCSS**, **JavaScript**, and **Three.js**.
 
-The site showcases my background, skills, and projects, and was designed to reflect both creativity and clean development standards.
+This site was designed to showcase my **skills, creativity, and frontend development abilities** through a clean, modern, and interactive user experience.
 
-> 📌 Note: This is a **work in progress**. Some sections are still under development and will be completed soon.
+🔗 [Live Demo](https://your-live-site-url.com)  
+📁 [Project Repository](https://github.com/DanielBonder/your-portfolio-repo)
 
 ---
 
-## ✨ Features
+## ✨ Highlights
 
-- 3D interactive section using **Three.js**
-- About Me section with personal background
-- Skills overview with key technologies
-- Projects page (additional content coming soon)
-- Contact form UI (functionality in progress)
+- ⚙️ Fully responsive layout for all devices  
+- 🧠 "About Me" section with personal and academic background  
+- 🛠️ Skills section showing key technologies and tools  
+- 🚀 Projects section featuring selected real-world work  
+- 🧊 3D animated hero section with **Three.js**  
+- 📬 Contact section (UI-ready, backend coming soon)
 
 ---
 
 ## 🛠 Tech Stack
 
-- **Frontend:** HTML, CSS, JavaScript
-- **3D & Animation:** Three.js
-- **Other Tools:** VS Code, GitHub, Netlify
+- **Frontend:** HTML, SCSS, JavaScript  
+- **3D Animation:** Three.js  
+- **Build Tools:** Vite  
+- **Deployment:** Netlify  
+- **Version Control:** Git & GitHub  
 
 ---
 
-## 🚧 In Progress
+## 🚧 Roadmap
 
-- Projects section: More items and links will be added
-- Contact form: Visual is ready, backend submission will be implemented soon
+- [ ] Add backend to contact form  
+- [ ] Expand portfolio items with live links and images  
+- [ ] Optimize performance and accessibility  
 
 ---
 
-## 📩 Contact
+## 📫 Contact
 
-If you'd like to get in touch, feel free to connect via email: danielbonder123@gmail.com
+Feel free to reach out or connect on [LinkedIn](https://www.linkedin.com/in/daniel-bonder1/)  
+📧 danielbonder123@gmail.com
+
+---
+
+> This portfolio reflects my ongoing journey as a **Full Stack Developer** with a passion for clean code, engaging design, and user-centric development.
