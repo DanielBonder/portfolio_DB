@@ -1,29 +1,22 @@
-<p align="center">
-  <img src="https://img.icons8.com/emoji/48/palette-emoji.png" alt="palette" width="60" />
-</p>
+# 🌐 Personal Portfolio – Daniel Bonder
 
-<h1 align="center">🌐 Personal Portfolio – Daniel Bonder</h1>
+Welcome to my personal developer portfolio – a fully responsive and animated website built using **HTML**, **SCSS**, **JavaScript**, and **Three.js**.
 
-<p align="center">
-  A fully responsive, animated developer portfolio showcasing <b>skills, creativity, and frontend expertise</b><br>
-  Built with <b>HTML</b>, <b>SCSS</b>, <b>JavaScript</b>, and <b>Three.js</b>
-</p>
+This site was designed to showcase my **skills, creativity, and frontend development abilities** through a clean, modern, and interactive user experience.
 
-<p align="center">
-  🔗 <a href="https://danielbonder.netlify.app/">Live Demo</a> • 
-  📁 <a href="https://github.com/DanielBonder/portfolio_DB">Project Repository</a>
-</p>
+🔗 [Live Demo](https://danielbonder.netlify.app/)  
+📁 [Project Repository](https://github.com/DanielBonder/portfolio_DB)
 
 ---
 
 ## ✨ Highlights
 
-- ⚙️ Fully responsive layout for all screen sizes
-- 🧠 “About Me” section with personal and academic background
-- 🛠️ Skills section showcasing key technologies and tools
-- 🚀 Projects section featuring selected real-world work
-- 🧊 3D animated hero section using <b>Three.js</b>
-- 📬 Contact section (UI implemented, backend coming soon)
+- ⚙️ Fully responsive layout for all devices  
+- 🧠 "About Me" section with personal and academic background  
+- 🛠️ Skills section showing key technologies and tools  
+- 🚀 Projects section featuring selected real-world work  
+- 🧊 3D animated hero section with **Three.js**  
+- 📬 Contact section (UI-ready, backend coming soon)
 
 ---
 
@@ -41,17 +34,23 @@
 
 ## 🚧 Roadmap
 
-- [ ] Add backend support for contact form
-- [ ] Expand project gallery with live previews
-- [ ] Improve performance and accessibility (Lighthouse goals)
+- [ ] Add backend support for contact form  
+- [ ] Expand portfolio items with live previews and images  
+- [ ] Optimize performance and accessibility (Lighthouse goals)
+
+---
+
+## 📸 Preview
+
+![Portfolio Screenshot](./portfolio_screenshot.png)
 
 ---
 
 ## 📫 Contact
 
-Feel free to reach out or connect with me:
+Feel free to reach out or connect:
 
-- 📧 [danielbonder123@gmail.com](mailto:danielbonder123@gmail.com)
+- 📧 [danielbonder123@gmail.com](mailto:danielbonder123@gmail.com)  
 - 💼 [LinkedIn](https://www.linkedin.com/in/daniel-bonder1/)
 
 ---
