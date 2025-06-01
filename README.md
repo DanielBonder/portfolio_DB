@@ -38,14 +38,6 @@ This site was designed to showcase my **skills, creativity, and frontend develop
 - [ ] Expand portfolio items with live previews and images  
 - [ ] Optimize performance and accessibility (Lighthouse goals)
 
----
-
-## 📸 Preview
-
-![Portfolio Screenshot](./portfolio_screenshot.png)
-
----
-
 ## 📫 Contact
 
 Feel free to reach out or connect:
